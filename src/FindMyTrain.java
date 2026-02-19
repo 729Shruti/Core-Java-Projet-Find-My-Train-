@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,10 +22,32 @@ public class FindMyTrain {
     Platform p1 = new Platform("1");
     Platform p2 = new Platform("2");
 
-    Schedule schedule1=new Schedule("8:00","5:30",DelhiExpress,p1,p1,MumbaiCentral,DelhiStation);
-    Schedule schedule2=new Schedule("5:00","7:30",MumbaiExpress,p1,p2,PuneStation,MumbaiCentral);
-    Schedule schedule3=new Schedule("6:00","3:30",DelhiExpress,p1,p1,MumbaiCentral,DelhiStation);
-    Schedule schedule4=new Schedule("9:00","11:30",MumbaiExpress,p1,p2,PuneStation,MumbaiCentral);
+
+
+    Schedule s1 = new Schedule(DelhiExpress, List.of(
+            new ScheduleStop(
+                    null,
+                    LocalDateTime.of(2025, 2, 1, 6, 0),
+                    MumbaiCentral,
+                    p1,
+                    1
+            ),
+            new ScheduleStop(
+                    LocalDateTime.of(2025, 2, 1, 7, 0),
+                    LocalDateTime.of(2025, 2, 1, 7, 5),
+                    PuneStation,
+                    p2,
+                    2
+            ),
+            new ScheduleStop(
+                    LocalDateTime.of(2025, 2, 1, 9, 0),
+                    null,
+                    DelhiStation,
+                    p1,
+                    3
+            )
+    ));
+
 
 
     trainSystem.addTrain(ChennaiExpress);
@@ -37,10 +61,8 @@ public class FindMyTrain {
     trainSystem.addPlatforms(p1);
     trainSystem.addPlatforms(p2);
 
-    trainSystem.addSchedule(schedule1);
-    trainSystem.addSchedule(schedule2);
-    trainSystem.addSchedule(schedule3);
-    trainSystem.addSchedule(schedule4);
+    trainSystem.addSchedule(s1);
+
 
     Scanner sc=new Scanner(System.in);
     System.out.print("Enter Source:");
