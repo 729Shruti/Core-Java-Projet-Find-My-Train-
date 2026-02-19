@@ -1,38 +1,36 @@
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Station {
-    private String Station_id;
-    private String Station_name;
-    private List<Platform> platformList;
+    private String StationId;
+    private String StationName;
 
-    public Station(String staion_id, String station_name) {
-        this.Station_id = staion_id;
-        this.Station_name = station_name;
-        this.platformList=new ArrayList<>();
+
+    public Station(String stationId, String stationName) {
+        StationId = stationId;
+        StationName = stationName;
     }
 
-    public String getStation_id() {
-        return Station_id;
+    public String getStationId() {
+        return StationId;
     }
 
-    public void setStation_id(String staion_id) {
-        Station_id = Station_id;
+    public void setStationId(String stationId) {
+        StationId = stationId;
     }
 
-    public String getStation_name() {
-        return Station_name;
+    public String getStationName() {
+        return StationName;
     }
 
-    public void setStation_name(String station_name) {
-        Station_name = station_name;
+    public void setStationName(String stationName) {
+        StationName = stationName;
     }
 
-    public List<Platform> getPlatformList() {
-        return platformList;
-    }
-
-    public void setPlatformList(List<Platform> platformList) {
-        this.platformList = platformList;
+    @Override
+    public String toString() {
+        return "Station{" +
+                "StationId='" + StationId + '\'' +
+                ", StationName='" + StationName + '\'' +
+                '}';
     }
 }

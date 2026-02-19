@@ -1,16 +1,20 @@
 public class Schedule {
     private String arrivalTime;
-    private String departureTime;
+    private String reachingTime;
     private Train train;
-    private Platform platform;
-    private Station station;
+    private Platform srcPlatform;
+    private Platform endPlatform;
+    private Station srcStation;
+    private Station endStation;
 
-    public Schedule(String arrivalTime, String departureTime, Train train, Platform platform, Station station) {
+    public Schedule(String arrivalTime, String reachingTime, Train train, Platform srcPlatform, Platform endPlatform, Station srcStation, Station endStation) {
         this.arrivalTime = arrivalTime;
-        this.departureTime = departureTime;
+        this.reachingTime = reachingTime;
         this.train = train;
-        this.platform = platform;
-        this.station = station;
+        this.srcPlatform = srcPlatform;
+        this.endPlatform = endPlatform;
+        this.srcStation = srcStation;
+        this.endStation = endStation;
     }
 
     public String getArrivalTime() {
@@ -21,12 +25,12 @@ public class Schedule {
         this.arrivalTime = arrivalTime;
     }
 
-    public String getDepartureTime() {
-        return departureTime;
+    public String getReachingTime() {
+        return reachingTime;
     }
 
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
+    public void setReachingTime(String reachingTime) {
+        this.reachingTime = reachingTime;
     }
 
     public Train getTrain() {
@@ -37,30 +41,48 @@ public class Schedule {
         this.train = train;
     }
 
-    public Platform getPlatform() {
-        return platform;
+    public Platform getSrcPlatform() {
+        return srcPlatform;
     }
 
-    public void setPlatform(Platform platform) {
-        this.platform = platform;
+    public void setSrcPlatform(Platform srcPlatform) {
+        this.srcPlatform = srcPlatform;
     }
 
-    public Station getStation() {
-        return station;
+    public Platform getEndPlatform() {
+        return endPlatform;
     }
 
-    public void setStation(Station station) {
-        this.station = station;
+    public void setEndPlatform(Platform endPlatform) {
+        this.endPlatform = endPlatform;
+    }
+
+    public Station getSrcStation() {
+        return srcStation;
+    }
+
+    public void setSrcStation(Station srcStation) {
+        this.srcStation = srcStation;
+    }
+
+    public Station getEndStation() {
+        return endStation;
+    }
+
+    public void setEndStation(Station endStation) {
+        this.endStation = endStation;
     }
 
     @Override
     public String toString() {
         return "Schedule{" +
                 "arrivalTime='" + arrivalTime + '\'' +
-                ", departureTime='" + departureTime + '\'' +
+                ", reachingTime='" + reachingTime + '\'' +
                 ", train=" + train +
-                ", platform=" + platform +
-                ", station=" + station +
+                ", srcPlatform=" + srcPlatform +
+                ", endPlatform=" + endPlatform +
+                ", srcStation=" + srcStation +
+                ", endStation=" + endStation +
                 '}';
     }
 }

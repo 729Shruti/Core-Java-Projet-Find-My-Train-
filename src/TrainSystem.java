@@ -6,31 +6,44 @@ import java.util.Map;
 public class TrainSystem {
      private Map<String,Station> stations=new HashMap<>();
      private Map<String,Train> trains=new HashMap<>();
+     private Map<String,Platform> platforms=new HashMap<>();
      private List<Schedule> schedules =new ArrayList<>();
 
      public void addStations(Station  station){
-          stations.put(station.getStation_id(),station);
+          stations.put(station.getStationId(),station);
      }
-
+     public void addPlatforms(Platform  platform){
+          platforms.put(platform.getPlatformNo(),platform);
+     }
      public void addTrain(Train train){
-          trains.put(train.getId(), train);
+          trains.put(train.getTrainId(), train);
      }
 
      public void addSchedule(Schedule schedule){
           schedules.add(schedule);
      }
 
-     public List<Schedule> findMyTrains(String startStation,String endStation){
-          List <Schedule> res=new ArrayList<>();
+     public List<Schedule> findMyTrains(String src,String des){
+          List<Schedule> result=new ArrayList<>();
+
           for(Schedule schedule:schedules){
-               if(schedule.getStation().getStation_name().equals(startStation) ||
-                   schedule.getStation().getStation_name().equals(endStation)){
-                    res.add(schedule);
+               if (schedule.getSrcStation().getStationName().equals(src) && schedule.getEndStation().getStationName().equals(des)) {
+                    result.add(schedule);
                }
-
           }
-          return res;
-
+          return result;
      }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

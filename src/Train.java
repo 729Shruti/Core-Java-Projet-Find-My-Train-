@@ -1,50 +1,46 @@
 public class Train {
 
-    private String id;
-    private String name;
-    private String type;
+    private String trainId;
+    private String trainName;
+    private String trainType;
 
 
-    public Train(String id, String name, String type) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
+    public Train(String trainId, String trainName, String trainType) {
+        this.trainId = trainId;
+        this.trainName = trainName;
+        this.trainType = trainType;
     }
 
-
-    public String getId() {
-        return id;
+    public String getTrainId() {
+        return trainId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setTrainId(String trainId) {
+        this.trainId = trainId;
     }
 
-    public String getName() {
-        return name;
+    public String getTrainName() {
+        return trainName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTrainName(String trainName) {
+        this.trainName = trainName;
     }
 
-    public String getType() {
-        return type;
+    public String getTrainType() {
+        return trainType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTrainType(String trainType) {
+        this.trainType = trainType;
     }
+
     @Override
     public String toString() {
         return "Train{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", type='" + type + '\'' +
+                "trainId='" + trainId + '\'' +
+                ", trainName='" + trainName + '\'' +
+                ", trainType='" + trainType + '\'' +
                 '}';
     }
-
-
-
-
 }
